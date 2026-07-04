@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Sleep Environment & Wellness Tracker</title>
+<link rel="stylesheet" href="css/style.css" />
+<link rel="stylesheet" href="css/report.css" />
+<link rel="stylesheet" href="css/responsive.css" />
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container">
+    <div class="brand">
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="none">
+        <path d="M20 14.5A8.5 8.5 0 1 1 9.5 4a6.5 6.5 0 0 0 10.5 10.5Z" fill="#a6b8ff"/>
+      </svg>
+      <span class="brand-name">Sleep &amp; Wellness Tracker</span>
+    </div>
+    <nav class="main-nav">
+      <a href="index.html">Dashboard</a>
+      <a href="history.html">History</a>
+      <a href="report.html" class="active">Log Sleep</a>
+      <a href="analysis.html">Analysis</a>
+      <a href="about.html">About</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="report-hero">
+    <div class="container">
+      <p class="eyebrow">MORNING CHECK-IN</p>
+      <h1 class="report-headline">How did you sleep?</h1>
+      <p class="hero-sub">Takes less than a minute. This gets matched against last night's room readings.</p>
+    </div>
+  </section>
+
+  <section class="report-form-section">
+    <div class="container">
+      <form id="sleep-form" class="report-form">
+
+        <div class="form-row two-col">
+          <div class="field">
+            <label for="sleep-date">Date</label>
+            <input type="date" id="sleep-date" required />
+          </div>
+          <div class="field">
+            <label for="log-time">Logged at</label>
+            <input type="time" id="log-time" readonly />
+          </div>
+        </div>
+
+        <div class="form-row two-col">
+          <div class="field">
+            <label for="sleep-start">Bedtime</label>
+            <input type="time" id="sleep-start" required />
+          </div>
+          <div class="field">
+            <label for="sleep-end">Wake time</label>
+            <input type="time" id="sleep-end" required />
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="field slider-field">
+            <label for="fragmentation">
+              Fragmentation <span class="slider-hint">how often you woke up</span>
+            </label>
+            <input type="range" id="fragmentation" min="0" max="10" value="3" />
+            <span class="slider-readout" id="fragmentation-readout">3 / 10</span>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="field slider-field">
+            <label for="tiredness">
+              Tiredness <span class="slider-hint">right now, this morning</span>
+            </label>
+            <input type="range" id="tiredness" min="0" max="10" value="5" />
+            <span class="slider-readout" id="tiredness-readout">5 / 10</span>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="field slider-field">
+            <label for="sleep-rating">
+              Overall sleep rating <span class="slider-hint">how rested you feel</span>
+            </label>
+            <input type="range" id="sleep-rating" min="0" max="10" value="5" />
+            <span class="slider-readout" id="rating-readout">5 / 10</span>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="field">
+            <label for="note">Additional note <span class="slider-hint">optional, 140 characters</span></label>
+            <textarea id="note" maxlength="140" rows="3" placeholder="e.g. Woke up because of heat."></textarea>
+          </div>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Save Sleep Report</button>
+        <p class="form-status" id="form-status"></p>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <span>Sleep &amp; Wellness Tracker</span>
+    <span>Sensor data synced via Firebase</span>
+  </div>
+</footer>
+
+<script src="js/report.js"></script>
+</body>
+</html>

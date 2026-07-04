@@ -1,0 +1,114 @@
+.report-hero {
+  padding-top: 56px;
+  padding-bottom: 8px;
+}
+
+.report-headline {
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  margin-top: 10px;
+}
+
+.report-form-section {
+  padding-top: 24px;
+}
+
+.report-form {
+  max-width: 640px;
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 34px;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.form-row.two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.field label {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.03em;
+  color: var(--text-muted);
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.slider-hint {
+  font-family: var(--font-body);
+  font-size: 0.78rem;
+  color: var(--text-faint);
+}
+
+input[type="date"],
+input[type="time"],
+textarea {
+  background: var(--panel-2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 10px 12px;
+  color: var(--text);
+  font-size: 0.95rem;
+}
+
+textarea {
+  resize: vertical;
+  font-family: var(--font-body);
+}
+
+input[type="range"] {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 4px;
+  border-radius: 999px;
+  background: var(--border);
+  outline: none;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--moon);
+  cursor: pointer;
+  border: 3px solid var(--bg);
+}
+
+input[type="range"]::-moz-range-thumb {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--moon);
+  cursor: pointer;
+  border: 3px solid var(--bg);
+}
+
+.slider-readout {
+  align-self: flex-end;
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  color: var(--moon);
+}
+
+.report-form .btn {
+  align-self: flex-start;
+}
+
+.form-status {
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  color: var(--teal);
+  min-height: 1em;
+}

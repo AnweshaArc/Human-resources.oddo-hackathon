@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Sleep and Wellness</title>
+<link rel="stylesheet" href="css/style.css" />
+<link rel="stylesheet" href="css/history.css" />
+<link rel="stylesheet" href="css/responsive.css" />
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container">
+    <div class="brand">
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="none">
+        <path d="M20 14.5A8.5 8.5 0 1 1 9.5 4a6.5 6.5 0 0 0 10.5 10.5Z" fill="#a6b8ff"/>
+      </svg>
+      <span class="brand-name">Sleep &amp; Wellness Tracker</span>
+    </div>
+    <nav class="main-nav">
+      <a href="index.html">Dashboard</a>
+      <a href="history.html">History</a>
+      <a href="report.html">Log Sleep</a>
+      <a href="analysis.html">Analysis</a>
+      <a href="about.html">About</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="history-hero">
+    <div class="container">
+      <p class="eyebrow">HISTORICAL DATA</p>
+      <h1 class="history-headline">Your sleep, night by night</h1>
+      <p class="hero-sub">Every logged night, lined up so the pattern behind the tired mornings starts to show.</p>
+    </div>
+  </section>
+
+  <section class="history-chart-section">
+    <div class="container">
+      <div class="chart-card">
+        <h3>Sleep Rating Over Time</h3>
+        <div class="chart-canvas-wrap"><canvas id="ratingChart"></canvas></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="history-list-section">
+    <div class="container">
+      <div id="history-empty" class="history-empty" hidden>
+        <p>No logged nights yet.</p>
+        <a href="report.html" class="btn btn-primary">Log your first night</a>
+      </div>
+      <div id="history-list" class="history-list"></div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <span>Sleep &amp; Wellness Tracker</span>
+    <span>Sensor data synced via Firebase</span>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+<script src="js/history.js"></script>
+</body>
+</html>

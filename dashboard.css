@@ -1,0 +1,202 @@
+/* ==========================================================================
+   Dashboard — Night Report hero, stat cards, charts
+   ========================================================================== */
+
+/* ---------- Hero / Night Report ---------- */
+
+.hero {
+  padding-top: 64px;
+  padding-bottom: 24px;
+}
+
+.hero-headline {
+  font-size: clamp(2.2rem, 4.5vw, 3.4rem);
+  line-height: 1.05;
+  margin-top: 10px;
+  max-width: 16ch;
+}
+
+.hero-headline em {
+  font-style: italic;
+  color: var(--moon);
+}
+
+.hero-sub {
+  margin-top: 16px;
+  max-width: 46ch;
+  color: var(--text-muted);
+  font-size: 1.05rem;
+}
+
+.hero-sub strong {
+  color: var(--text);
+  font-weight: 600;
+}
+
+/* Night Arc: a horizon-line chart. Time runs left (sleep start) to
+   right (wake time). Each dot's vertical offset above the arc encodes
+   how far that hour's temperature sat above the night's average —
+   a small heat ripple across the sleep window. Dot color encodes humidity. */
+
+.night-arc-wrap {
+  margin: 40px 0 8px;
+  padding: 28px 24px 18px;
+  background: linear-gradient(180deg, var(--panel), var(--panel-2));
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-panel);
+}
+
+#night-arc {
+  width: 100%;
+  height: auto;
+  display: block;
+  overflow: visible;
+}
+
+.arc-endpoint-label {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  fill: var(--text-faint);
+}
+
+.arc-reading-dot {
+  transition: r 0.15s ease;
+}
+
+.night-arc-wrap .arc-caption {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 4px;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--text-faint);
+}
+
+.hero-stats {
+  display: flex;
+  gap: 36px;
+  margin-top: 28px;
+  flex-wrap: wrap;
+}
+
+.hero-stat {
+  display: flex;
+  flex-direction: column;
+}
+
+.hero-stat .stat-value {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  color: var(--text);
+}
+
+.hero-stat .stat-label {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-faint);
+  margin-top: 2px;
+}
+
+/* ---------- Stat card grid ---------- */
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+.stat-card {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 20px;
+}
+
+.stat-card .card-eyebrow {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-faint);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.stat-card .dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.dot-temp { background: var(--dawn); }
+.dot-humidity { background: var(--teal); }
+.dot-sleep { background: var(--moon); }
+.dot-feel { background: var(--rose); }
+
+.stat-card .card-value {
+  font-family: var(--font-display);
+  font-size: 1.7rem;
+  margin-top: 10px;
+}
+
+.stat-card .card-sub {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  margin-top: 6px;
+}
+
+/* ---------- Charts ---------- */
+
+.charts-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.chart-card {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 22px 22px 12px;
+}
+
+.chart-card h3 {
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--text);
+}
+
+.chart-card .chart-canvas-wrap {
+  margin-top: 16px;
+  height: 220px;
+  position: relative;
+}
+
+/* ---------- Log CTA ---------- */
+
+.log-cta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: linear-gradient(120deg, var(--panel-2), var(--panel));
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 30px 34px;
+  gap: 24px;
+}
+
+.log-cta h3 {
+  font-size: 1.3rem;
+}
+
+.log-cta p {
+  color: var(--text-muted);
+  margin-top: 6px;
+  font-size: 0.95rem;
+}

@@ -1,0 +1,99 @@
+[hidden] {
+  display: none !important;
+}
+
+.history-hero {
+  padding-top: 56px;
+  padding-bottom: 8px;
+}
+
+.history-headline {
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  margin-top: 10px;
+}
+
+.history-chart-section .chart-card {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 22px 22px 12px;
+}
+
+.history-chart-section .chart-canvas-wrap {
+  margin-top: 16px;
+  height: 220px;
+  position: relative;
+}
+
+.history-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.history-card {
+  display: grid;
+  grid-template-columns: 120px 1fr auto;
+  align-items: center;
+  gap: 20px;
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 18px 22px;
+}
+
+.history-card .h-date {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.history-card .h-note {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+.history-card .h-stats {
+  display: flex;
+  gap: 22px;
+}
+
+.history-card .h-stat {
+  text-align: right;
+}
+
+.history-card .h-stat .val {
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  display: block;
+}
+
+.history-card .h-stat .lbl {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  color: var(--text-faint);
+}
+
+.history-empty {
+  text-align: center;
+  padding: 60px 20px;
+  border: 1px dashed var(--border);
+  border-radius: var(--radius-lg);
+  color: var(--text-muted);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: center;
+}
+
+.chart-canvas-wrap {
+  position: relative;
+  width: 100%;
+  height: 320px; /* fixed height so Chart.js has something to draw into */
+}
+
+.chart-canvas-wrap canvas {
+  width: 100% !important;
+  height: 100% !important;
+}

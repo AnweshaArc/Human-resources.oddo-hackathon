@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Sleep Environment & Wellness Tracker</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/analysis.css">
+
+</head>
+
+<body>
+
+<header class="site-header">
+
+    <div class="container">
+
+        <div class="brand">
+
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none">
+                <path d="M20 14.5A8.5 8.5 0 1 1 9.5 4a6.5 6.5 0 0 0 10.5 10.5Z" fill="#9f8cff"/>
+            </svg>
+
+            <span class="brand-name">
+    Sleep &amp; Wellness Tracker
+</span>
+
+        </div>
+
+        <nav class="main-nav">
+    <a href="index.html">Dashboard</a>
+    <a href="history.html">History</a>
+    <a href="report.html">Log Sleep</a>
+    <a href="analysis.html" class="active">Analysis</a>
+    <a href="about.html">About</a>
+</nav>
+
+
+    </div>
+
+</header>
+
+<main class="analysis-page">
+
+<div class="container">
+
+<div class="analysis-header">
+
+<div>
+
+<h1>Analysis</h1>
+
+<p>
+Visualize your sleep patterns over time.
+</p>
+
+</div>
+
+<div class="filter-buttons">
+
+<button class="filter-btn">7d</button>
+
+<button class="filter-btn active">30d</button>
+
+<button class="filter-btn">All</button>
+
+</div>
+
+</div>
+
+<div class="summary-grid">
+
+<div class="summary-card">
+
+<h4>Avg Quality</h4>
+
+<div class="summary-value" id="avgQuality">
+
+0
+
+</div>
+
+<span>out of 10</span>
+
+</div>
+
+<div class="summary-card">
+
+<h4>Avg Duration</h4>
+
+<div class="summary-value" id="avgDuration">
+
+0h
+
+</div>
+
+<span>per night</span>
+
+</div>
+
+<div class="summary-card">
+
+<h4>Total Nights</h4>
+
+<div class="summary-value" id="totalNights">
+
+0
+
+</div>
+
+<span>logged</span>
+
+</div>
+
+<div class="summary-card">
+
+<h4>Average Temp</h4>
+
+<div class="summary-value" id="avgTemp">
+
+0°C
+
+</div>
+
+<span>room temperature</span>
+
+</div>
+
+</div>
+
+<!-- Sleep Quality Chart -->
+
+<div class="chart-box">
+
+<h2>
+
+Sleep Quality & Duration
+
+</h2>
+
+<canvas id="qualityChart"></canvas>
+
+</div>
+
+<!-- Environment Chart -->
+
+<div class="chart-box">
+
+<h2>
+
+Environment Impact on Quality
+
+</h2>
+
+<canvas id="environmentChart"></canvas>
+
+</div>
+
+<!-- Scatter Chart -->
+
+<div class="chart-box">
+
+<h2>
+
+Temperature vs Sleep Quality
+
+</h2>
+
+<p>
+
+Each dot represents one night.
+
+</p>
+
+<canvas id="scatterChart"></canvas>
+
+</div>
+
+</div>
+
+</main>
+
+<footer class="site-footer">
+
+<div class="container">
+
+<span>
+
+Sleep & Wellness Tracker
+
+</span>
+
+</div>
+
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.3/dist/chart.umd.min.js"></script>
+
+<script src="js/analysis.js"></script>
+
+</body>
+
+</html>

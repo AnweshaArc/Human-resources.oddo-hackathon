@@ -1,0 +1,379 @@
+/* ==========================================================================
+   Nocta — Sleep Environment & Wellness Tracker
+   Base styles: reset, tokens, typography, header, footer
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap');
+
+:root {
+  /* Color — a night-sky palette, not a template palette */
+  --bg: #0d1424;
+  --bg-deep: #090e1a;
+  --panel: #141d33;
+  --panel-2: #19233d;
+  --border: #263256;
+  --text: #e9edf9;
+  --text-muted: #8c96b8;
+  --text-faint: #5c6790;
+
+  --moon: #a6b8ff;      /* cool moonlight — primary accent */
+  --dawn: #eda15f;      /* warm dawn — heat / temperature accent */
+  --teal: #63d1c6;      /* humidity accent */
+  --rose: #e08fa0;      /* fragmentation / alert accent */
+
+  --radius-sm: 8px;
+  --radius: 14px;
+  --radius-lg: 22px;
+
+  --font-display: 'Fraunces', serif;
+  --font-body: 'Inter', -apple-system, sans-serif;
+  --font-mono: 'IBM Plex Mono', monospace;
+
+  --shadow-panel: 0 1px 0 rgba(255,255,255,0.03) inset, 0 10px 30px rgba(3,6,16,0.35);
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background:
+    radial-gradient(1200px 600px at 15% -10%, rgba(166,184,255,0.08), transparent 60%),
+    radial-gradient(900px 500px at 90% 0%, rgba(237,161,95,0.06), transparent 55%),
+    var(--bg);
+  color: var(--text);
+  font-family: var(--font-body);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3 {
+  font-family: var(--font-display);
+  font-weight: 500;
+  margin: 0;
+  letter-spacing: -0.01em;
+}
+
+p { margin: 0; }
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button, input, textarea {
+  font-family: inherit;
+}
+
+:focus-visible {
+  outline: 2px solid var(--moon);
+  outline-offset: 3px;
+}
+
+.container {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 0 32px;
+}
+
+/* ---------- Header ---------- */
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background: rgba(13, 20, 36, 0.82);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--border);
+}
+
+.site-header .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 72px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  color: var(--text);
+}
+
+.brand svg { display: block; }
+
+.brand-name {
+  letter-spacing: 0.01em;
+}
+
+.brand-name em {
+  font-style: italic;
+  color: var(--moon);
+}
+
+.main-nav {
+  display: flex;
+  gap: 4px;
+}
+
+.main-nav a {
+  font-size: 0.92rem;
+  color: var(--text-muted);
+  padding: 8px 14px;
+  border-radius: 999px;
+  transition: color 0.15s ease, background 0.15s ease;
+}
+
+.main-nav a:hover {
+  color: var(--text);
+  background: var(--panel-2);
+}
+
+.main-nav a.active {
+  color: var(--bg);
+  background: var(--moon);
+}
+
+/* ---------- Generic section rhythm ---------- */
+
+section {
+  padding: 56px 0;
+}
+
+.eyebrow {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-faint);
+}
+
+/* ---------- Buttons ---------- */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 22px;
+  border-radius: 999px;
+  font-size: 0.92rem;
+  font-weight: 500;
+  border: 1px solid transparent;
+  cursor: pointer;
+}
+
+.btn-primary {
+  background: var(--moon);
+  color: #0d1424;
+}
+
+.btn-primary:hover {
+  background: #b9c6ff;
+}
+
+.btn-ghost {
+  background: transparent;
+  border-color: var(--border);
+  color: var(--text);
+}
+
+.btn-ghost:hover {
+  border-color: var(--moon);
+}
+
+/* ---------- Footer ---------- */
+
+.site-footer {
+  border-top: 1px solid var(--border);
+  padding: 28px 0;
+}
+
+.site-footer .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--text-faint);
+  font-size: 0.82rem;
+}
+
+.site-footer .container span { font-family: var(--font-mono); }
+
+/* ==========================================
+   HELP BUTTON
+========================================== */
+
+.help-btn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+
+    width: 60px;
+    height: 60px;
+
+    border: none;
+    border-radius: 50%;
+
+    background: linear-gradient(135deg,#7b8cff,#5fd0c8);
+
+    color: white;
+
+    font-size: 28px;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    box-shadow: 0 10px 30px rgba(0,0,0,.35);
+
+    transition: .3s ease;
+
+    z-index: 9999;
+}
+
+.help-btn:hover{
+    transform: scale(1.08);
+}
+
+
+/* ==========================================
+   HELP POPUP
+========================================== */
+
+.help-popup{
+
+    position: fixed;
+
+    bottom: 105px;
+
+    right: 30px;
+
+    width: 340px;
+
+    background: #151d33;
+
+    border: 1px solid rgba(255,255,255,.08);
+
+    border-radius: 18px;
+
+    overflow: hidden;
+
+    display: none;
+
+    box-shadow: 0 20px 45px rgba(0,0,0,.45);
+
+    animation: popup .25s ease;
+
+    z-index:9999;
+
+}
+
+
+@keyframes popup{
+
+    from{
+
+        opacity:0;
+        transform:translateY(20px);
+
+    }
+
+    to{
+
+        opacity:1;
+        transform:translateY(0);
+
+    }
+
+}
+
+
+.help-header{
+
+    background:#202b49;
+
+    padding:18px 22px;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+}
+
+
+.help-header h3{
+
+    margin:0;
+
+    color:white;
+
+    font-size:18px;
+
+}
+
+
+#closeHelp{
+
+    color:white;
+
+    font-size:30px;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+
+#closeHelp:hover{
+
+    color:#7b8cff;
+
+}
+
+
+.help-content{
+
+    padding:22px;
+
+}
+
+
+.help-content p{
+
+    color:#cbd4ff;
+
+    line-height:1.6;
+
+    margin-bottom:20px;
+
+}
+
+
+.help-item{
+
+    background:#202b49;
+
+    padding:14px;
+
+    border-radius:12px;
+
+    margin-bottom:12px;
+
+    color:white;
+
+    transition:.3s;
+
+}
+
+
+.help-item:hover{
+
+    transform:translateX(5px);
+
+    background:#29365d;
+
+}
